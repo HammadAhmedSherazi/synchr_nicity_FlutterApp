@@ -3,14 +3,14 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class AddCardSCreen extends StatefulWidget {
-  const AddCardSCreen({super.key});
+class AddCardScreen extends StatefulWidget {
+  const AddCardScreen({super.key});
 
   @override
-  State<AddCardSCreen> createState() => _AddCardSCreenState();
+  State<AddCardScreen> createState() => _AddCardScreenState();
 }
 
-class _AddCardSCreenState extends State<AddCardSCreen> {
+class _AddCardScreenState extends State<AddCardScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

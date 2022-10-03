@@ -1,17 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get_navigation/src/root/get_material_app.dart';
+import 'package:get/get_navigation/src/routes/get_route.dart';
 // import 'package:synchr_nicity/Screens/ChatBoot.dart';
 import 'package:synchr_nicity/Screens/ChatScreen.dart';
-import 'package:synchr_nicity/Screens/Screen12.dart';
-import 'package:synchr_nicity/Screens/Screen13.dart';
-import 'package:synchr_nicity/Screens/Screen14.dart';
-import 'package:synchr_nicity/Screens/Screen18.dart';
+
+import 'package:synchr_nicity/Screens/CallRingingScreen.dart';
+import 'package:synchr_nicity/Screens/ProfileSettingScreen.dart';
+import 'package:synchr_nicity/Screens/AddCardScreen.dart';
+import 'package:synchr_nicity/Screens/VideoCallScreen.dart';
+import 'package:synchr_nicity/auth/splash-screen.dart';
 import 'Components/constant.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'Screens/Screen15.dart';
-import 'Screens/Screen16.dart';
-import 'Screens/Screen17.dart';
-import 'Screens/Screen19.dart';
+import 'Screens/ChatSettingScreen.dart';
+import 'Screens/AccountSettingScreen.dart';
+import 'Screens/PrivacySettingScreen.dart';
+import 'Screens/AddNewCardScreen.dart';
 import 'auth/chat-list.dart';
 
 void main() {
@@ -29,31 +33,23 @@ class MyApp extends StatelessWidget {
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (context , child) {
-        return MaterialApp(
+        return GetMaterialApp(
           debugShowCheckedModeBanner: false,
-          // title: 'First Method',
-          // You can use the library anywhere in the app even in theme
+          title: 'Synchr Nicity',
           theme: ThemeData(
             primarySwatch: Palette.kToDark,
             primaryColor: kPrimaryColor,
-            // textTheme:Theme.of(context).textTheme.apply(bodyColor: Colors.white),
             textTheme: GoogleFonts.poppinsTextTheme(),
-            // textTheme: TextTheme(
-            //   bodyText1: TextStyle(
-            //     color: Colors.white,
-            //   )
-            // ),
-            
-            
-            
-            
-            
-          
+           
           ),
-          home: child,
+           initialRoute: '/splash',
+           getPages: [
+             GetPage(name: '/splash', page: () => splashScreen() ),
+           ],
+          // home: child,
         );
       },
-      child: AddNewCardScreen(),
+      // child: SettingScreen(),
     );
   }
 }
